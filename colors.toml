@@ -1,0 +1,126 @@
+# Porcelain — derived from ~/Pictures/Wallpapers
+#
+# The three wallpapers are one material photographed three times: a matte,
+# sculpted ceramic surface under soft directional light. No hard edges, no
+# texture, almost no chroma. What separates one plane from the next is a value
+# step, never a line.
+#
+# Sampling them gives two chromatic events and nothing else:
+#
+#   * a warm rose bounce light at hue ~351 (#FFC3CB at its brightest)
+#   * a cool slate-teal ambient shadow at hue ~170-200
+#
+# Everything else is porcelain: #FAFAFA down through #7B7D88 to #050505.
+#
+# The palette keeps that ratio, and then goes further: it reduces to TWO hues.
+#
+# Rose and blue. Everything else on this desktop is a neutral grey. No third
+# family exists anywhere — not in syntax, not in meters, not in icons, not in
+# status. The earlier versions of this theme carried eight hues and then five,
+# and both read as a collection of separately themed applications rather than
+# one system. Two is what actually holds together.
+#
+#   rose  (#9e5462, hue 349)  — YOU, and ALARM. Focus, selection, the active
+#         window border, the cursor, the active tab, the mode block, folders,
+#         the wordmark. Pushed to high chroma (#a8394b) it becomes the error
+#         state: same family, more urgency.
+#
+#   blue  (#4a6c94, hue 212)  — EVERYTHING ELSE THAT NEEDS TO BE SEEN.
+#         Information, activity, success, throughput, strings, keywords.
+#
+# The blue is the ground amplified, not a new colour. Every neutral here is
+# already a desaturated blue — surfaces measure hue 218-220, ink 215, `muted`
+# 214. Turning that hue to full chroma adds nothing foreign, sits 137 degrees
+# from the rose, and can never be mistaken for green.
+#
+# The rule, learned the hard way: ANY element with real area on screen is the
+# rose or it is neutral. Never the second colour, and never a third. A large
+# block of any other hue reads instantly as a competing primary. Folders went
+# crimson -> teal -> sage before landing back on the rose, and each intermediate
+# step failed this rule in a different way.
+#
+# Two hairlines, used everywhere, derived three ways but arriving at one place:
+#
+#   divider  #d2d7de  inside content — splits, table rules, list separators
+#   border   #bcc3cc  widget outlines — cards, inputs, chips, btop boxes
+
+mode = "light"
+
+# The bounce light. Focus, selection, active border, cursor, keyboard RGB.
+accent    = "#9e5462"
+# Visual selection: the bounce light at wash strength, so a selection is
+# recognisably the same colour as focus without shouting.
+selection = "#ebd9de"
+# Comments, line numbers, dividers, ANSI bright-black. 3.1:1 on background —
+# recessive, still legible. This is the one token that must work as both text
+# and hairline, and readability wins.
+muted     = "#848e9b"
+
+# Surfaces, in stacking order. Four steps, ~1.1:1 apart, the way the
+# wallpapers separate planes: by value alone.
+#
+#   background         windows, terminal, editor body      (the working surface)
+#   lighter_background cursorline, current row, hover       (the highlight band)
+#   dark_background    bar, sidebars, gutter, GTK chrome    (the plate beneath)
+#   darker_background  deepest ground, backdrop, inactive
+#
+# Floating cards go one step *above* background — pure white, set in the
+# shell.*.toml files — so a popup reads as lifted rather than as a hole.
+background         = "#f4f5f7"
+lighter_background = "#eaecf0"
+dark_background    = "#e7e9ed"
+darker_background  = "#d4d8df"
+
+# Ink, from the shadow in the dark wallpaper (#0D0E0F): cool graphite, never
+# pure black. Pure black on near-white glares; graphite does not.
+foreground        = "#3b424c"
+bright_foreground = "#1d2229"
+light_foreground  = "#525a65"
+dark_foreground   = "#68717d"
+
+# The active border is the wallpaper's light itself: rose bounce sweeping into
+# slate shadow, on the same diagonal the sculpted forms run.
+hyprland_active_border   = "rgba(9e5462ff) rgba(6d7f93ff) 45deg"
+hyprland_inactive_border = "rgba(d2d7deff)"
+
+# Two hues. That is the whole palette.
+#
+# Everything on this desktop is the rose, the blue, or a neutral grey. There is
+# no third family anywhere — not in syntax, not in meters, not in icons.
+#
+# The blue is not an arbitrary partner. Every neutral in this theme is already a
+# desaturated blue: the surfaces measure hue 218-220, the ink measures 215, and
+# `muted` measures 214. Turning that same hue up to full chroma introduces
+# nothing new — the second colour is the ground itself, amplified. It is 137
+# degrees from the rose, which is ample separation, and it can never be mistaken
+# for green.
+#
+# The ANSI slots keep their names because every terminal app addresses them by
+# name, but they no longer keep their hues:
+#
+#   red, magenta        -> ROSE     alarm and identity
+#   green, blue, cyan   -> BLUE     information, activity, success
+#   yellow              -> NEUTRAL  warnings recede to ink rather than shout
+#
+# Within a family the slots are separated by chroma, not lightness. On a
+# near-white ground a "lighter blue" cannot be light enough to look different
+# and still clear 4.5:1, so all three blues sit at roughly one darkness and
+# differ in saturation: 23, 33, 41. Every value below clears 4.5:1 on
+# `background`.
+red     = "#a8394b"
+orange  = "#9e5462"
+yellow  = "#68717d"
+green   = "#5a7290"
+cyan    = "#3f6597"
+blue    = "#4a6c94"
+magenta = "#9e5462"
+brown   = "#68717d"
+
+# On a light ground "bright" cannot mean lighter — it would vanish. Each bright
+# is the same family pushed deeper.
+bright_red     = "#8e2a3c"
+bright_yellow  = "#525a65"
+bright_green   = "#4a6383"
+bright_cyan    = "#35558c"
+bright_blue    = "#3a587c"
+bright_magenta = "#7d4250"

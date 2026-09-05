@@ -1,0 +1,14 @@
+# The lock field sits over a blurred wallpaper, and the three backgrounds run
+# from near-white to near-black. A near-opaque white card with ink on it is
+# the only treatment that stays readable across all of them.
+background       = "#ffffff"
+background-alpha = 0.94
+text             = "#1d2229"
+placeholder      = "#848e9b"
+text-error       = "#a8394b"
+border           = "hyprland.active-border"
+border-active    = "hyprland.active-border"
+border-error     = "#a8394b"
+border-alpha     = 1.0
+selection        = "#9e5462"
+selection-alpha  = 0.30

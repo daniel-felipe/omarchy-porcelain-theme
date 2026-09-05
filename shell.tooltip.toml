@@ -1,0 +1,6 @@
+background       = "#ffffff"
+background-alpha = 0.97
+text             = "#3b424c"
+border           = "hyprland.active-border-foreground"
+# A tooltip is transient; its border is the quietest of the lifted surfaces.
+border-alpha     = 0.5

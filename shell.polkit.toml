@@ -1,0 +1,11 @@
+background       = "#ffffff"
+background-alpha = 1.0
+text             = "#3b424c"
+text-error       = "#a8394b"
+border           = "hyprland.active-border"
+border-error     = "#a8394b"
+border-alpha     = 1.0
+# A password prompt earns a heavier scrim than a launcher does.
+scrim            = "#1d2229"
+scrim-alpha      = 0.45
+accent           = "#9e5462"

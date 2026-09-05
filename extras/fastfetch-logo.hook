@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Point the fastfetch logo at the current Omarchy theme's accent.
+#
+# Omarchy ships /etc/fastfetch/config.jsonc with the logo on ANSI `green`,
+# which every theme defines as its *success* colour. The wordmark is the
+# largest block of colour on the screen when fastfetch runs, so the desktop's
+# loudest element ends up being a semantic that is not reporting anything.
+#
+# The accent is the right colour for an identity mark: it is the one hue a
+# theme reserves for "this is the thing that matters". But no ANSI slot holds
+# the accent — the sixteen slots are the syntax palette — so this writes a
+# truecolor escape instead, and re-writes it on every theme set so the logo
+# still follows a theme switch.
+#
+# fastfetch reads ~/.config/fastfetch/config.jsonc in preference to /etc, so
+# the user copy is what gets patched. If it is missing it is seeded from /etc.
+
+set -euo pipefail
+
+THEME_PATH="$HOME/.local/state/omarchy/current/theme"
+COLORS="$THEME_PATH/colors.toml"
+CONFIG="$HOME/.config/fastfetch/config.jsonc"
+SYSTEM_CONFIG="/etc/fastfetch/config.jsonc"
+
+[[ -f $COLORS ]] || exit 0
+
+accent=$(omarchy-theme-color --file "$COLORS" accent 2>/dev/null)
+[[ $accent =~ ^#[0-9a-fA-F]{6}$ ]] || exit 0
+
+if [[ ! -f $CONFIG ]]; then
+  [[ -f $SYSTEM_CONFIG ]] || exit 0
+  mkdir -p "$(dirname "$CONFIG")"
+  cp "$SYSTEM_CONFIG" "$CONFIG"
+fi
+
+r=$((16#${accent:1:2}))
+g=$((16#${accent:3:2}))
+b=$((16#${accent:5:2}))
+
+# Replace whatever sits in the logo's colour slot 1 — a named colour on a
+# fresh copy from /etc, or the previous theme's escape on a later run.
+tmp=$(mktemp "$CONFIG.XXXXXX")
+sed -E "s/(\"1\"[[:space:]]*:[[:space:]]*)\"[^\"]*\"/\1\"38;2;${r};${g};${b}\"/" "$CONFIG" >"$tmp"
+mv "$tmp" "$CONFIG"
+
+exit 0

@@ -1,0 +1,12 @@
+# The bar is the plate the desktop sits on, so it is one step below window
+# surfaces rather than another window on top of them. Text is light_foreground,
+# not foreground: the bar must be legible without competing with what you read.
+background       = "#e7e9ed"
+background-alpha = 1.0
+text             = "#525a65"
+# Modules calling attention to themselves (recording, updates, alerts). Red,
+# not accent — the accent means "focus", and an alert is not focus.
+active           = "#a8394b"
+scale-with-font  = true
+size-horizontal  = 28
+size-vertical    = 30

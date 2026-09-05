@@ -1,0 +1,32 @@
+# Idle chrome is slate-neutral. Every state the user caused — hover, keyboard
+# focus, selection — is the only place the rose appears, so the most chromatic
+# thing on screen is always the thing being acted on.
+#
+# Fill alphas run a little higher than the dark-theme defaults: a dark wash at
+# 4% over near-white is invisible, where the same wash over ink is not.
+normal-color        = "#525a65"
+normal-fill-alpha   = 0.04
+normal-border       = "#848e9b"
+normal-border-width = 1
+normal-border-alpha = 0.48
+
+hover-cursor-color        = "#1d2229"
+hover-cursor-fill-alpha   = 0.07
+hover-cursor-border       = "#9e5462"
+hover-cursor-border-width = 1
+hover-cursor-border-alpha = 0.45
+
+focus-color        = "#1d2229"
+focus-fill-alpha   = 0.07
+focus-border       = "#9e5462"
+focus-border-width = 1
+focus-border-alpha = 0.75
+
+selected-color        = "#9e5462"
+selected-fill-alpha   = 0.14
+selected-border       = "#9e5462"
+selected-border-width = 0
+selected-border-alpha = 1.0
+
+pressed-fill-alpha   = 0.20
+selection-fill-alpha = 0.30

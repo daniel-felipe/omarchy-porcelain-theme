@@ -1,0 +1,121 @@
+# Porcelain — btop.
+#
+# Omarchy would generate this from colors.toml. It is written by hand instead
+# because the stock template makes three assumptions that only hold on a dark
+# theme:
+#
+#   1. meter_bg was the selection wash. Every empty meter groove on screen was
+#      the desktop's "this row is chosen" colour, roughly forty times at once,
+#      meaning nothing. A track is not a selection.
+#   2. Every meter ran a different multi-hue ramp, so btop used all eight
+#      palette hues simultaneously. That reads as data-viz on ink and as noise
+#      on near-white. Each family now runs one hue, deepening with magnitude —
+#      the same "value, not saturation" rule the rest of the theme follows.
+#   3. The `available` ramp ended in red, so a machine with plenty of memory
+#      free lit up as alarm. Availability is neutral here — it is not an event.
+#      The alarm rose survives in one place: the top of the temperature ramp.
+#
+# Box outlines were four different hues assigned
+# arbitrarily, which made one program look like four. They are all one hairline
+# now; the accent marks shortcuts and the selected process, i.e. focus.
+
+# Main background, empty for terminal default, need to be empty if you want transparent background
+theme[main_bg]="#f4f5f7"
+
+# Main text color
+theme[main_fg]="#3b424c"
+
+# Title color for boxes
+theme[title]="#1d2229"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#9e5462"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#ebd9de"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#1d2229"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#848e9b"
+
+# Color of text appearing on top of graphs, i.e uptime and current network graph scaling
+theme[graph_text]="#525a65"
+
+# Background color of the percentage meters. A neutral trough one step below
+# the working surface — the same relationship a scrollbar has to its track.
+theme[meter_bg]="#dfe3e8"
+
+# Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+theme[proc_misc]="#525a65"
+
+# CPU, Memory, Network, Proc box outline colors. One hairline for all four:
+# chrome is neutral, and the accent is reserved for focus.
+theme[cpu_box]="#bcc3cc"
+theme[mem_box]="#bcc3cc"
+theme[net_box]="#bcc3cc"
+theme[proc_box]="#bcc3cc"
+
+# Box divider line and small boxes line color
+theme[div_line]="#d2d7de"
+
+# Temperature: neutral -> rose -> alarm rose. The one genuinely semantic ramp
+# in btop, and the only place the high-chroma rose appears.
+theme[temp_start]="#a4adb9"
+theme[temp_mid]="#9e5462"
+theme[temp_end]="#a8394b"
+
+# CPU load — blue, deepening. A magnitude, not a warning.
+theme[cpu_start]="#93a9c4"
+theme[cpu_mid]="#4a6c94"
+theme[cpu_end]="#35558c"
+
+# Mem/Disk free — grey. Nothing is happening; it should not draw the eye.
+theme[free_start]="#c3c9d1"
+theme[free_mid]="#a4adb9"
+theme[free_end]="#848e9b"
+
+# Mem/Disk cached — neutral. Cached memory is not activity you chose.
+theme[cached_start]="#b6bec9"
+theme[cached_mid]="#939dab"
+theme[cached_end]="#6e7887"
+
+# Mem/Disk available — neutral, lighter than cached. Headroom is not an event.
+theme[available_start]="#ced4dc"
+theme[available_mid]="#b0b9c5"
+theme[available_end]="#8d97a5"
+
+# Mem/Disk used — blue, deepening.
+theme[used_start]="#a3b5c9"
+theme[used_mid]="#5b7ba0"
+theme[used_end]="#3a587c"
+
+# Download — blue, matching CPU: both are throughput.
+theme[download_start]="#93a9c4"
+theme[download_mid]="#4a6c94"
+theme[download_end]="#35558c"
+
+# Upload — blue.
+theme[upload_start]="#a3b5c9"
+theme[upload_mid]="#5b7ba0"
+theme[upload_end]="#3a587c"
+
+# Per-process cpu/mem magnitude — same blue ramp as the CPU box, because it is
+# the same quantity.
+theme[process_start]="#93a9c4"
+theme[process_mid]="#4a6c94"
+theme[process_end]="#35558c"
+
+# Graph gradient (background -> foreground). The stock ramp put the selection
+# wash at step 2 and then went *lighter* from step 5 to 6, so density did not
+# read as density. This one is monotonic and neutral: on a near-white ground a
+# greyscale graph is legible at a glance, where a coloured one is confetti.
+theme[gradient_color_0]="#f4f5f7"
+theme[gradient_color_1]="#e4e7ec"
+theme[gradient_color_2]="#d2d7de"
+theme[gradient_color_3]="#bcc3cc"
+theme[gradient_color_4]="#a4adb9"
+theme[gradient_color_5]="#848e9b"
+theme[gradient_color_6]="#68717d"
+theme[gradient_color_7]="#3b424c"

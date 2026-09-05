@@ -1,0 +1,23 @@
+# Floating cards go one step *above* the window surface — pure white against
+# the theme's #f4f5f7 — which is how depth reads on a light desktop. The
+# Hyprland shadow does the rest; the card needs no border to look lifted.
+#
+# The launcher is the one surface allowed a little glass, because the
+# wallpapers are all soft falloff, but only a little: 0.97 keeps row text
+# fully opaque over the dark background as well as the light ones.
+background                = "#ffffff"
+background-alpha          = 0.97
+text                      = "#3b424c"
+border                    = "hyprland.active-border-foreground"
+border-alpha              = 1.0
+# The scrim is ink, not background: a white wash over a white desktop focuses
+# nothing. Kept gentle so the desktop dims rather than disappears.
+scrim                     = "#1d2229"
+scrim-alpha               = 0.32
+selected-background       = "#9e5462"
+selected-background-alpha = 0.13
+# Ink on the rose wash rather than rose on rose — the wash and the border
+# carry the colour, the text stays crisp.
+selected-text             = "#1d2229"
+selected-border           = "#9e5462"
+selected-border-alpha     = 0.55

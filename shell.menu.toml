@@ -1,0 +1,15 @@
+# Menus, clipboard, and emoji inherit these. Same card treatment as the
+# launcher but fully opaque: a menu is a list you read, not a surface you
+# look through.
+background                = "#ffffff"
+background-alpha          = 1.0
+text                      = "#1d2229"
+border                    = "hyprland.active-border-foreground"
+border-alpha              = 1.0
+scrim                     = "#1d2229"
+scrim-alpha               = 0.32
+selected-background       = "#9e5462"
+selected-background-alpha = 0.13
+selected-text             = "#1d2229"
+selected-border           = "#9e5462"
+selected-border-alpha     = 0.55

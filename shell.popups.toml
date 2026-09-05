@@ -1,0 +1,7 @@
+# Bar flyouts, dropdowns, OSD. One step above the window surface so a popup
+# reads as lifted off the bar rather than cut into it.
+background       = "#ffffff"
+background-alpha = 1.0
+text             = "#3b424c"
+border           = "hyprland.active-border"
+border-alpha     = 1.0

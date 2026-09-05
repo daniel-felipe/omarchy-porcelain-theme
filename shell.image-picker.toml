@@ -1,0 +1,11 @@
+# The picker has no card of its own — the scrim *is* the surface, and the
+# thumbnails sit on it. So unlike the launcher and menus, this one stays light:
+# a bright wash with ink on top, matching the rest of the theme, rather than a
+# dark overlay that would read as a different application.
+scrim                   = "#f4f5f7"
+scrim-alpha             = 0.72
+text                    = "#1d2229"
+selected-border         = "#9e5462"
+selected-border-alpha   = 1.0
+unselected-border       = "#68717d"
+unselected-border-alpha = 0.30
