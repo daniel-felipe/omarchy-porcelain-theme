@@ -14,19 +14,24 @@ omarchy theme install https://github.com/daniel-felipe/omarchy-porcelain-theme
 Or from the menu: `Super + Space` → _Install > Style > Theme_, and paste the
 repo URL. Remove it again with _Remove > Theme_.
 
-**For full fidelity, run one more command after installing:**
+**For full fidelity, run a few more commands after installing:**
 
 ```bash
-rm -rf ~/.config/omarchy/themes/porcelain/.git
+cd ~/.config/omarchy/themes/porcelain
+rm -rf .git
+cp hyprland.lua.example hyprland.lua
+cp neovim.lua.example neovim.lua
+omarchy theme set porcelain
 ```
 
-Omarchy will not run `.lua` from a theme it cloned from a repo — `hyprland.lua`
-and `neovim.lua` both run code at startup, so a fresh install falls back to
-Omarchy's generated defaults for the border and for Neovim. Those generated
+Omarchy will not run `.lua` from a theme it cloned from a repo — a Hyprland or
+Neovim config runs code at startup — so the repo ships them as
+`hyprland.lua.example` and `neovim.lua.example`, and a fresh install falls back
+to Omarchy's generated defaults for the border and for Neovim. Those generated
 defaults are tuned for dark themes and get three things wrong on a light one
-(see `neovim.lua`'s header comment for the exact bugs). Removing `.git` turns
-the installed copy into an ordinary user theme, which Omarchy does not
-restrict, and both files take effect on the next `omarchy theme set porcelain`.
+(see `neovim.lua.example`'s header comment for the exact bugs). Removing `.git`
+turns the installed copy into an ordinary user theme, which Omarchy does not
+restrict, so once copied to their real names both files take effect.
 The tradeoff: `omarchy theme install` will no longer pull updates from this
 repo into that directory. For a theme this opinionated about a light-mode
 Neovim, that tradeoff is worth taking.
@@ -138,12 +143,12 @@ finally the same colour.
 - `colors.toml` — the palette. Everything Omarchy templates (terminals, Helix,
   VS Code, Chromium, Obsidian, gum, Claude, Pi, keyboard RGB) is generated from
   it.
-- `hyprland.lua` — gaps, rounding, shadow, blur, groupbar, and the border
-  colours. Because this file exists, Omarchy skips generating one from
-  `colors.toml`, so the borders are set here explicitly. On a near-white
+- `hyprland.lua.example` — gaps, rounding, shadow, blur, groupbar, and the
+  border colours. Once installed as `hyprland.lua`, Omarchy skips generating
+  one from `colors.toml`, so the borders are set here explicitly. On a near-white
   desktop a tight dark shadow reads as dirt, so the shadow is wide and faint.
   Only applies once `.git` is removed — see *Install*.
-- `neovim.lua` — aether, with the palette plus the light-mode corrections
+- `neovim.lua.example` — aether, with the palette plus the light-mode corrections
   aether's dark-theme defaults get wrong: cursorline, search wash, lualine mode
   block, and every "this row is chosen" highlight. See the comments in the
   file. Only applies once `.git` is removed — see *Install*.
@@ -254,7 +259,8 @@ sudo sed -i 's/033\[32m/033[35m/' /usr/share/omarchy/bin/omarchy-show-logo
 
 ## License
 
-The theme files (`colors.toml`, `hyprland.lua`, `neovim.lua`, `btop.theme`,
-`shell.*.toml`, `icons.theme`, `extras/`) are MIT — see [LICENSE](LICENSE).
+The theme files (`colors.toml`, `hyprland.lua.example`, `neovim.lua.example`,
+`btop.theme`, `shell.*.toml`, `icons.theme`, `extras/`) are MIT — see
+[LICENSE](LICENSE).
 The wallpapers in `backgrounds/` and the screenshot in `preview.png` are
 excluded from that grant and remain the property of their respective artists.
